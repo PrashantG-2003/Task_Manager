@@ -5,8 +5,8 @@ This project is a small, production-grade full-stack web application built for t
 ---
 
 ## 🚀 Live Demo Links
-* **Frontend App:** *[Insert your deployed Vercel/Netlify URL here if applicable]*
-* **Backend API:** *[Insert your deployed Render/Railway URL here if applicable]*
+* **Frontend App:** *[hearty-wholeness-production-2e5b.up.railway.app]*
+* **Backend API:** *[taskmanager-production-4379.up.railway.app]*
 
 ---
 
