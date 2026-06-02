@@ -1,7 +1,15 @@
 // Automatically handles local machine dev port OR auto-links monorepo URLs on Railway
-const API_URL = window.location.hostname === 'localhost'
-  ? 'http://localhost:5000/api/tasks'
-  : `${import.meta.env.VITE_API_BASE_URL || window.location.origin}/api/tasks`;
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+// Safe check for Vite's environment variable
+const apiBaseUrl = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL) 
+  || window.location.origin;
+
+const API_URL = isLocalhost 
+  ? 'http://localhost:5000/api/tasks' 
+  : `${apiBaseUrl}/api/tasks`;
+  
+// console.log('API Base URL:', API_URL); // Debugging line to verify the correct API URL is being used
 
 export const taskService = {
   // GET all tasks
