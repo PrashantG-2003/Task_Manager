@@ -1,4 +1,7 @@
-const API_URL = 'http://localhost:5000/api/tasks';
+// Automatically handles local machine dev port OR auto-links monorepo URLs on Railway
+const API_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:5000/api/tasks'
+  : `${window.location.protocol}//${window.location.hostname.replace('manager', 'api').replace('client', 'server')}/api/tasks`;
 
 export const taskService = {
   // GET all tasks
